@@ -1,4 +1,4 @@
-language: generic
+
 sudo: required
 services:
   - docker
@@ -7,4 +7,4 @@ before_install:
   - docker build -t charanrj0908/docker-project -f Dockerfile.dev
 
 script:
-  - docker run -e CI=true charanrj0908/docker-project  npm run test
+  - docker run charanrj0908/docker-project  npm run test -- --coverage
