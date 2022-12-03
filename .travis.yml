@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t charanrj0908/DOCKER-PROJECT -f Dockerfile.dev
+
+script:
+  - docker run -e CI=true charanrj0908/DOCKER-PROJECT  npm run test
